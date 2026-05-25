@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boutique Trend - Copywriting Assistant</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Boutique Trend</h1>
+        <p>AI Copywriting Assistant</p>
+    </header>
+
+    <main class="container">
+        <!-- Columna Izquierda: Formulario -->
+        <section class="form-section">
+            <h2>Detalles de la Prenda</h2>
+            <form id="copy-form" novalidate>
+                <div class="form-group">
+                    <label for="prenda">Prenda</label>
+                    <input type="text" id="prenda" name="prenda" placeholder="Ej. Vestido midi" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="marca">Marca</label>
+                    <input type="text" id="marca" name="marca" placeholder="Ej. Atelier Norden" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="material">Material</label>
+                    <input type="text" id="material" name="material" placeholder="Ej. Lino 100%" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="color">Color</label>
+                    <input type="text" id="color" name="color" placeholder="Ej. Blanco marfil" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="estilo">Estilo</label>
+                    <input type="text" id="estilo" name="estilo" placeholder="Ej. Minimalista chic" autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="contexto">Contexto / Ocasión</label>
+                    <input type="text" id="contexto" name="contexto" placeholder="Ej. Tarde de verano junto al mar" autocomplete="off">
+                </div>
+                <button type="submit" class="btn-submit" id="submit-btn">Generar Textos</button>
+            </form>
+        </section>
+
+        <!-- Columna Derecha: Resultados -->
+        <section class="results-section">
+            <h2>Resultados Generados</h2>
+            
+            <div id="loading-state" class="hidden">
+                <div class="spinner"></div>
+                <p>Generando textos mágicos...</p>
+            </div>
+
+            <div id="results-container" class="hidden">
+                <div class="result-card">
+                    <div class="card-header">
+                        <h3>Ficha Web</h3>
+                        <button type="button" class="btn-copy" data-target="output-web">Copiar</button>
+                    </div>
+                    <div class="card-body" id="output-web"></div>
+                </div>
+
+                <div class="result-card">
+                    <div class="card-header">
+                        <h3>Optimización SEO</h3>
+                        <button type="button" class="btn-copy" data-target="output-seo">Copiar</button>
+                    </div>
+                    <div class="card-body" id="output-seo"></div>
+                </div>
+
+                <div class="result-card">
+                    <div class="card-header">
+                        <h3>Instagram</h3>
+                        <button type="button" class="btn-copy" data-target="output-ig">Copiar</button>
+                    </div>
+                    <div class="card-body" id="output-ig"></div>
+                </div>
+            </div>
+            
+            <div id="empty-state">
+                <svg class="empty-illustration" viewBox="0 0 140 160" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <defs>
+                        <linearGradient id="dressGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" stop-color="#E5C0AF" stop-opacity="0.35"/>
+                            <stop offset="100%" stop-color="#D6C4D3" stop-opacity="0.25"/>
+                        </linearGradient>
+                    </defs>
+                    <g fill="none" stroke="#8E8373" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M70 22 Q 64 18 64 12 Q 64 6 70 6"/>
+                        <path d="M30 38 L 70 26 L 110 38"/>
+                        <line x1="30" y1="38" x2="110" y2="38"/>
+                        <path d="M48 38 L 30 132 L 110 132 L 92 38" fill="url(#dressGrad)"/>
+                        <path d="M58 70 Q 70 76 82 70" stroke-opacity="0.55"/>
+                        <path d="M55 95 Q 70 102 85 95" stroke-opacity="0.4"/>
+                    </g>
+                    <g fill="none" stroke="#C4D1BC" stroke-width="0.9" stroke-linecap="round">
+                        <path d="M16 142 Q 18 130 24 126"/>
+                        <path d="M20 134 Q 26 134 28 130"/>
+                        <path d="M20 138 Q 14 138 12 134"/>
+                        <path d="M124 142 Q 122 130 116 126"/>
+                        <path d="M120 134 Q 114 134 112 130"/>
+                        <path d="M120 138 Q 126 138 128 134"/>
+                    </g>
+                </svg>
+                <p>Completa el formulario para generar copys optimizados.</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
